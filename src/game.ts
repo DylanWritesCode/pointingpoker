@@ -3,8 +3,6 @@ import { socket } from '@/socket';
 import type { UserSession } from '@/types/UserSession';
 import type { PokerSession } from '@/types/PokerSession';
 import type { PeerUser } from '@/types/PeerUser';
-import { watch } from 'vue';
-import router from '@/router';
 
 export default {
     CreateNewPokerSession(sessionName: string, playerName: string) {
@@ -75,7 +73,7 @@ socket.on("EstablishPokerSession", (currentUser:PeerUser, peers:Array<PeerUser>)
         SessionName: firstUser.PokerName,
         SessionUsers: peers
     }
-    
+
     store.StoreSession(newSession);
     console.log(`Establishing poker session ${firstUser.PokerId}`);
 });

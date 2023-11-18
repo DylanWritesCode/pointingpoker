@@ -17,7 +17,7 @@
 
 <template>
     <div class="self-center flex flex-col items-center"> 
-        <div class="text-2xl w-[100px] h-[150px] flex justify-center border-2 rounded-md flex content-center items-center" :class="getCardColor()">
+        <div class="text-2xl w-[100px] h-[150px] flex justify-center border-2 rounded-md content-center items-center" :class="getCardColor()">
             <Transition>
                 <span v-show="showCard" class="text-3xl text-white">{{ vote }}</span>
             </Transition>
