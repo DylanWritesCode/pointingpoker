@@ -1,26 +1,27 @@
 <script setup lang="ts">
     import {ref} from 'vue'
     import { store } from '@/store';
-import game from '@/game';
+    import game from '@/game';
 
     defineProps({
         cards: Array<string>
     })
 
-    const currentCard = ref("");
     function selectCard (e:string){
+        if(store.CurrentUser == undefined) return;
+        if(store.CurrentUser.ShowCards == true) return;
 
-        if(e == currentCard.value) {
-            currentCard.value = "";
+        if(e == store.CurrentUser.Vote) {
+            store.UpdateUserVote(e);
         } else {
-            currentCard.value = e;
+            store.UpdateUserVote(e);
         }
 
-        game.SendUserVote(currentCard.value);
+        game.SendUserVote(e);
     }
 
     function getActiveClass(e:string){
-        if(currentCard.value == e){
+        if(store.CurrentUser?.Vote == e){
             return 'border-blue-400 -mt-5'
         } else
         {

@@ -1,19 +1,16 @@
 <script setup lang="ts">
-    defineEmits(["test"]);
-
-    defineProps({
-        players: Array<{name:string, voted:boolean, vote:string}>,
-        showCards:Boolean
-    })
+  import { store } from '@/store'
 
 </script>
 <template>
-    <div class="text-lg bg-slate-50 drop-shadow-lg flex flex-col gap-1 w-80 p-4">
+    <div class="text-lg bg-slate-50 drop-shadow-lg flex flex-col gap-3 p-4">
       <h1 class="font-bold">Participants</h1>
       <div class="grid gap-2 p-4">
-          <div class="grid grid-cols-2 justify-between" v-for="player in players"  v-bind:key="player.name">
-              <span class="font-semibold">{{ player.name }}</span>
-              <span class="justify-self-end">{{ player.voted ? showCards ? player.vote : 'Voted' : '' }}</span>
+          <div class="grid grid-cols-2 border-b-2 border-opacity-10 border-black" v-for="player in store.CurrentSession?.SessionUsers"  v-bind:key="player.UserName">
+              <span class="font-semibold">{{ player.UserName }}</span>
+              <span v-if="player.IsSpectator" class="justify-self-end font-thin text-md italic">{{ player.IsSpectator ? "Spectator" : "" }}</span>
+              <span v-if="!player.IsSpectator && (player.Vote == undefined || player.Vote == '')" class="justify-self-end font-thin text-3xl italic"></span>
+              <span v-if="!player.IsSpectator && (player.Vote != undefined && player.Vote != '')" class="justify-self-end font-thin text-md italic">👍</span>
           </div>
       </div>
     </div>

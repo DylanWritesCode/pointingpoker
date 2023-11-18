@@ -1,5 +1,7 @@
 export type UserSession = {
     SocketId: string,
     UserName:string,
-    Vote: string | undefined
+    IsSpectator:boolean,
+    Vote: string | undefined,
+    ShowCards: boolean
 }
