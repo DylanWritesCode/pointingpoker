@@ -29,8 +29,8 @@
     }
 </script>
 <template>
-    <div class="flex gap-6 h-[200px]">
-        <div v-for="card in cards" v-bind:key="card" class="border-2 text-center drop-shadow-md  w-[100px] flex items-center justify-center flex-grow hover:-mt-5 hover:border-blue-400 rounded-lg cursor-pointer"
+    <div class="flex flex-wrap justify-center gap-6 p-10 mb-10">
+        <div v-for="card in cards" v-bind:key="card" class="border-2 text-center drop-shadow-md flex w-[75px] h-[125px] items-center justify-center hover:-mt-5 hover:border-blue-400 rounded-lg cursor-pointer"
          @click="selectCard(card)"
          :class="getActiveClass(card)">
             <span class="font-bold text-4xl">{{ card }}</span>

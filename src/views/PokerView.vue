@@ -64,7 +64,13 @@
               <p class="text-xs font-bold" id="ctc-text" hidden>Copied to Clipboard!</p>
             </div>
           </div>
-          <PlayerList />
+          <PlayerList class="mt-5" />
+
+          <div class="flex gap-6 self-center mt-5" v-if="store.CurrentUser?.IsSpectator == false">
+            <button class="text-blue-400 border-2 rounded-md p-1 pl-5 pr-5 border-blue-400 font-bold hover:bg-blue-400 hover:text-white" @click="revealCards" :disabled="store.CurrentUser?.ShowCards == true">Reveal Vote</button>
+            <button class="bg-red-400 text-white border-2 rounded-md p-1 pl-5 pr-5 hover:bg-white hover:text-red-400 hover:border-red-400" @click="resetVote" :disabled="store.CurrentUser?.ShowCards == false">Reset Vote</button>
+          </div>
+          
         </div>
       </div>
 
@@ -78,13 +84,9 @@
         </div>
 
 
-        <CardSelection v-if="store.CurrentUser?.IsSpectator == false" :cards="['0.5','1','2','4','8','13','?']" class="self-center mt-auto mb-20"/>
+        <CardSelection v-if="store.CurrentUser?.IsSpectator == false" :cards="['0','1/2','1','2','3','5','8','13','20','40','100','?']" class="self-center"/>
         <div class="flex justify-center items-center h-1/4" v-if="store.CurrentUser?.IsSpectator == true">
          
-        </div>
-        <div class="flex gap-6 self-center mb-20" v-if="store.CurrentUser?.IsSpectator == false">
-          <button class="text-blue-400 border-2 rounded-md p-1 pl-5 pr-5 border-blue-400 font-bold hover:bg-blue-400 hover:text-white" @click="revealCards" :disabled="store.CurrentUser?.ShowCards == true">Reveal Vote</button>
-          <button class="bg-red-400 text-white border-2 rounded-md p-1 pl-5 pr-5 hover:bg-white hover:text-red-400 hover:border-red-400" @click="resetVote" :disabled="store.CurrentUser?.ShowCards == false">Reset Vote</button>
         </div>
     </div>
 
