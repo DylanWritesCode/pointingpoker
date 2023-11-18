@@ -5,7 +5,7 @@
   import JoinSession from '../components/JoinSession.vue';
   import PlayerList from '../components/PlayerList.vue';
 
-  import { ref} from 'vue'
+  import { ref } from 'vue'
   import { store } from '@/store'
   import router from '@/router';
   import game from '@/game';
@@ -46,11 +46,14 @@
 <template>
   <div class="h-screen">
     <div v-if="store.CurrentSession != undefined" class="flex flex-col h-[100%] justify-between">
+      <router-link to="/">
+        <img src="/pointerpokerlogo.png" class="w-32 m-10 absolute cursor-pointer"/>
+      </router-link>
+      <div class="flex flex-col p-5 w-full h-1/6 mt-20">
 
-      <div class="flex flex-col p-5 w-full">
         <h1 class="text-4xl font-bold self-center">{{ store.CurrentSession?.SessionName }}</h1>
-        <div class="flex justify-between p -5">
-          <PlayerList class="self-start"/>
+
+        <div class="flex flex-col self-end justify-between p-5 absolute top-0">
           <div class="bg-blue-500 w-[300px] p-5 rounded-lg flex flex-col">
             <div class="text-white flex flex-col gap-3">
               <div class="flex flex-col">
@@ -61,6 +64,7 @@
               <p class="text-xs font-bold" id="ctc-text" hidden>Copied to Clipboard!</p>
             </div>
           </div>
+          <PlayerList />
         </div>
       </div>
 
@@ -68,7 +72,7 @@
             <div class="flex items-center justify-center flex-wrap gap-4">
               <PlayerCard v-bind:key="player.UserId" v-for="player in store.CurrentSession?.SessionUsers.filter(x=> !x.IsSpectator)" :name="player.UserName" :vote="player.Vote" :showCard="store.CurrentUser?.ShowCards"/>
             </div>
-            <div v-show="store.CurrentSession.SessionUsers.filter(x=> !x.IsSpectator && (x.Vote == undefined || x.Vote == '')).length > 0 " class="text-black border-2 self-center p-10 bg-blue-100 rounded-lg">
+            <div v-show="store.CurrentSession.SessionUsers.filter(x=> !x.IsSpectator && (x.Vote == undefined || x.Vote == '')).length > 0 " class="text-black border-2 self-center p-10 bg-blue-100 rounded-lg mb-10 mt-10">
               Waiting for all players to vote...
             </div>
         </div>

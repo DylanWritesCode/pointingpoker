@@ -20,7 +20,9 @@
 
 <template>
   <main>
-    <div class="flex justify-center content-center mt-[10%]">
+
+    <div class="flex flex-col justify-center items-center content-center mt-[10%]">
+      <img src="/pointerpokerlogo.png" class="w-60"/>
       <div class="mt-10 w-1/3">
         <CreateSession />
        </div>

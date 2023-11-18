@@ -45,7 +45,8 @@
 
 </script>
 <template>
-    <div class="flex flex-col items-center gap-6">
+    <div class="flex flex-col items-center -mt-60 gap-6">
+        <img src="/pointerpokerlogo.png" class="w-60 mb-20"/>
         <form class="flex flex-col gap-12"  @submit.prevent="submitForm">
             <h1 class="text-center font-bold text-xl">Enter your name to join the poker session.</h1>
             <div class="flex flex-col">

@@ -38,8 +38,8 @@ export default {
     LeaveSession(){
         if(store.CurrentSession != undefined) {
             console.log(`Leaving poker session ${store.CurrentSession.SessionName}`);
-            store.StoreSession(undefined);
             socket.emit("LeaveSession", store.CurrentSession.SessionId);
+            store.StoreSession(undefined);
         }
     },
 
