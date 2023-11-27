@@ -23,7 +23,7 @@
 
     <div class="flex flex-col justify-center items-center content-center mt-[10%]">
       <img src="/pointerpokerlogo.png" class="w-60"/>
-      <div class="mt-10 w-1/3">
+      <div class="mt-10 sm:w-1/3">
         <CreateSession />
        </div>
     </div>

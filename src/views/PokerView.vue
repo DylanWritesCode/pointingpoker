@@ -45,16 +45,16 @@
 
 <template>
   <div class="h-screen">
-    <div v-if="store.CurrentSession != undefined" class="flex flex-col h-[100%] justify-between">
+    <div v-if="store.CurrentSession != undefined" class="flex flex-col h-[100%] md:items-start items-center justify-between">
       <router-link to="/">
-        <img src="/pointerpokerlogo.png" class="w-32 m-10 absolute cursor-pointer"/>
+        <img src="/pointerpokerlogo.png" class="w-32 m-10 md:absolute cursor-pointer"/>
       </router-link>
-      <div class="flex flex-col p-5 w-full h-1/6 mt-20">
+      <div class="flex flex-col p-5 w-full md:mt-20">
 
         <h1 class="text-4xl font-bold self-center">{{ store.CurrentSession?.SessionName }}</h1>
 
-        <div class="flex flex-col self-end justify-between p-5 absolute top-0">
-          <div class="bg-blue-500 w-[300px] p-5 rounded-lg flex flex-col">
+        <div class="flex flex-col self-center lg:self-end justify-between p-5 lg:absolute md:top-0">
+          <div class="bg-blue-500 w-[300px] p-5 rounded-lg md:flex flex-col hidden">
             <div class="text-white flex flex-col gap-3">
               <div class="flex flex-col">
                 <span class="font-bold">Session Link:</span>

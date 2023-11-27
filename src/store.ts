@@ -36,7 +36,7 @@ export const store = reactive({
         for(let i = 0; i < this.CurrentSession.SessionUsers.length; i++){
             const currentUser = this.CurrentSession.SessionUsers[i];
             if(currentUser.UserId == user.UserId) {
-                this.CurrentSession.SessionUsers.splice(i);
+                this.CurrentSession.SessionUsers.splice(i,1);
                 console.log(`Spliced ${i}`)
                 break;
             }
