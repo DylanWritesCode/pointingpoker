@@ -45,7 +45,7 @@
 
 </script>
 <template>
-    <div class="flex flex-col items-center -mt-60 gap-6">
+    <div class="flex flex-col items-center p-5">
         <img src="/pointerpokerlogo.png" class="w-60 mb-20"/>
         <form class="flex flex-col gap-12"  @submit.prevent="submitForm">
             <h1 class="text-center font-bold text-xl">Enter your name to join the poker session.</h1>
@@ -53,10 +53,10 @@
                 <label>Your Name</label>
                 <input v-model="playerName" class="border-2 border-black rounded-lg font-mono bg-white bg-opacity-50 p-2" />
             </div>
-            <div class="justify-between flex items-center">
-                <button class="bg-gray-500 rounded-md p-2 pl-5 pr-9 text-white font-bold text-lg" id="spectate">Spectate</button>
+            <div class="flex flex-col gap-10 items-center">
+                <button class="bg-blue-500 rounded-md p-2 pl-5 pr-5 text-white font-bold text-lg" id="participate">Join Session</button>
                 <span class="font-bold">OR</span>
-                <button class="bg-blue-500 rounded-md p-2 pl-5 pr-9 text-white font-bold text-lg" id="participate">Join Session</button>
+                <button class="bg-gray-500 rounded-md p-2 pl-5 pr-5 text-white font-bold text-lg" id="spectate">Spectate</button>
             </div>
         </form>
 
