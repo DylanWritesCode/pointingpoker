@@ -11,4 +11,10 @@
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
+  <footer id="copyright" class="absolute bottom-6 w-full text-center"></footer>
 </html>
+<script>
+  const copyrightElement = document.getElementById('copyright');
+  copyrightElement.innerHTML = `Copyright &copy; ${new Date().getFullYear()}  | PointerPoker.com`;
+</script>
+
