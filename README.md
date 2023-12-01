@@ -44,3 +44,6 @@ npm run build
 ```sh
 npm run lint
 ```
+
+Pointing Poker requies the server to run
+https://github.com/DylanWritesCode/pointingpoker-server
