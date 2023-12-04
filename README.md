@@ -1,6 +1,6 @@
 # pointing-poker
 
-This template should help get you started developing with Vue 3 in Vite.
+View the app live at https://pointerpoker.com/
 
 ## Recommended IDE Setup
 
