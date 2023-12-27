@@ -8,10 +8,14 @@
     <meta name="description" content="A simple FREE planning poker app for scrum/agile teams to collaborate in real-time during planning meetings.">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="flex flex-col h-screen">
+      <div class="flex-grow">
+        <div id="app" class="h-full border-4"></div>
+        <script type="module" src="/src/main.ts"></script>
+      </div>
+      <footer id="copyright" class="bottom-6 w-full text-center"></footer>
+    </div>
   </body>
-  <footer id="copyright" class="absolute bottom-6 w-full text-center"></footer>
 </html>
 <script>
   const copyrightElement = document.getElementById('copyright');

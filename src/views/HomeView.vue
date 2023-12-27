@@ -19,14 +19,9 @@
 </script>
 
 <template>
-  <main>
-
-    <div class="flex flex-col justify-center items-center content-center mt-[10%]">
+    <div class="flex flex-col items-center h-full justify-center">
       <img src="/pointerpokerlogo.png" class="w-60"/>
-      <p class="pt-10 flex-wrap w-1/3 text-center">Welcome to <strong>PointerPoker.com</strong>! A simple and <strong>FREE</strong> planning poker app for scrum/agile teams to collaborate in real-time during planning meetings.</p>
-      <div class="mt-10 sm:w-1/3">
-        <CreateSession />
-       </div>
+      <p class="text-center w-1/3">Welcome to <strong>PointerPoker.com</strong>! A simple and <strong>FREE</strong> planning poker app for scrum/agile teams to collaborate in real-time during planning meetings.</p>
+        <CreateSession class="md:w-1/4 w-1/2" />
     </div>
-  </main>
 </template>
